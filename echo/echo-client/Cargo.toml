@@ -1,0 +1,11 @@
+[package]
+name = "echo-client"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+zmq-subprocess-client.path = "../../zmq-subprocess-client"
+
+libloading.workspace = true
+zmq.workspace = true

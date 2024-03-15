@@ -1,0 +1,15 @@
+[lib]
+name = "echozsp"
+crate-type = ["cdylib"]
+
+[package]
+name = "echo-lib"
+
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+zmq-subprocess.path = "../.."
+
+zmq.workspace = true

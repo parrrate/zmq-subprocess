@@ -1,0 +1,10 @@
+[package]
+name = "zmq-subprocess-client"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+libloading.workspace = true
+thiserror.workspace = true
+zmq.workspace = true
