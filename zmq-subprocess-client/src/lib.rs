@@ -25,7 +25,10 @@ pub fn run(name: &str, socket: zmq::Socket) -> Result {
         let main: libloading::Symbol<unsafe extern "C" fn(*mut c_void) -> c_int> =
             lib.get(b"zmq_subproces_0_0_1")?;
         match main(socket.into_raw()) {
-            0 => Ok(()),
+            0 => {
+                lib.close()?;
+                Ok(())
+            }
             -1 => Err(ErrorImpl::ZmqInner),
             -2 => Err(ErrorImpl::Panic),
             unknown => Err(ErrorImpl::Unknown(unknown)),
